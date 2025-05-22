@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "set SSRS_jwtPrivateKey=#4r13lM00c! && pm2 start ./bin/www -i 8",
+    "start": "node app.js",
     "devstart": " nodemon ./bin/www",
     "serverstart": "DEBUG=express-web-api:* npm run devstart"
   },
@@ -11,7 +11,6 @@
     "node-sspi": "^0.2.11",
     "npm": ">=9.0.0",
     "@hapi/joi": "^17.1.1",
-    "artillery": "^2.0.22",
     "bcrypt-nodejs": "0.0.3",
     "config": "^3.3.12",
     "cookie-parser": "~1.4.7",
@@ -30,7 +29,6 @@
     "morgan": "~1.10.0",
     "mssql": "^11.0.1",
     "node-fetch": "^3.3.2",
-    "node-sspi": "^0.2.11",
     "oracledb": "^6.7.2",
     "passport": "^0.7.0",
     "read-excel-file": "^5.8.6",
@@ -39,8 +37,7 @@
     "svg-captcha": "^1.4.0",
     "uuid": "^11.1.0",
     "winston": "^3.17.0",
-    "winston-daily-rotate-file": "^5.0.0",
-    "xlsx": "^0.18.5"
+    "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

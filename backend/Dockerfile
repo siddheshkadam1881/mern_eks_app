@@ -15,7 +15,7 @@ RUN npm install --verbose
 COPY . .
 
 # Expose app port
-EXPOSE 3000
+EXPOSE 5000
 
 # Run the app
-CMD ["node", "index.js"]
+CMD ["node", "app.js"]
