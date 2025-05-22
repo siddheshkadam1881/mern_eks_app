@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      # containers:
+      #   - name: backend
+      #     image: <your-dockerhub-username>/mern-backend
+      #     ports:
+      #       - containerPort: 3000
+      #     env:
+      #       - name: MONGO_URI
+      #         value: "<your-mongo-atlas-uri>"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: backend
+spec:
+  selector:
+    app: backend
+  ports:
+    - port: 3000
+      targetPort: 3000
