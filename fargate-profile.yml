@@ -1,0 +1,12 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: eks-mern-fargate-cluster
+  region: ap-south-1
+
+fargateProfiles:
+  - name: fargate-profile-mern
+    selectors:
+      - namespace: mern
+
