@@ -1,8 +1,11 @@
-FROM node:18 as builder
-WORKDIR /app
-COPY . .
-RUN npm install && npm run build
+FROM node:18
 
-FROM nginx:alpine
-COPY --from=builder /app/build /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm install
+
+COPY . .
+
+# Run react app in dev mode, listen on 0.0.0.0 so accessible externally
+CMD ["npm", "start", "--", "--host", "0.0.0.0"]
