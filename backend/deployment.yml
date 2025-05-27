@@ -15,7 +15,7 @@ spec:
     spec:
         containers:
           - name: backend
-            image: o4317/eks-node-fargate-app:1.0
+            image: o4317/eks-node-fargate-app:2.0
             ports:
               - containerPort: 5000
       #     env:

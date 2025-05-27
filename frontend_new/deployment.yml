@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: o4317/eks-react-fargate-app:2.0
+          image: o4317/eks-react-fargate-app:4.0
           ports:
-            - containerPort: 3000
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -29,5 +29,5 @@ spec:
     app: frontend
   ports:
     - port: 80
-      targetPort: 3000
+      targetPort: 80
   type: ClusterIP
